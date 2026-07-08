@@ -1,0 +1,36 @@
+name: Create Docker Image
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-save:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Scarica il codice del repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Configura Docker Buildx
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Build dell'immagine ed esportazione in .tar
+      - name: Build and export Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          tags: danceemotionweb:latest
+          outputs: type=docker,dest=/tmp/danceemotionweb.tar
+
+      # Upload dell'immagine come artifact
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: danceemotionweb
+          path: /tmp/danceemotionweb.tar
+          retention-days: 5
