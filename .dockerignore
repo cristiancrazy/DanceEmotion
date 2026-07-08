@@ -34,3 +34,8 @@ docker-compose.yml
 docs/
 database/
 README.md
+
+# Script files
+create.sh
+start.sh
+stop.sh
