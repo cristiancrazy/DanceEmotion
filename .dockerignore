@@ -17,6 +17,9 @@ yarn-error.log
 .DS_Store
 Thumbs.db
 
+# Docker file
+Dockerfile
+
 # Docker compose locali
 docker-compose.yml
   
@@ -30,3 +33,4 @@ docker-compose.yml
 # Altri file
 docs/
 database/
+README.md
