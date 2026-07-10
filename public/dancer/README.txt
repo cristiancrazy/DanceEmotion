@@ -1,0 +1,1 @@
+For a successfully installation this folder mustn't be deleted.
