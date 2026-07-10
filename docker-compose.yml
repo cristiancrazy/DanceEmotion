@@ -18,6 +18,9 @@ services:
       # Mappa le cartelle dinamiche dell'applicazione
       - ./images/:/app/public/images/
       - ./videos/:/app/public/videos/
+      - ./dancer/:/app/public/dancer/
+      - ./school/:/app/public/school/
+      # Mappa 
       - ./uploads/attachment/:/app/uploads/attachment/
       - ./uploads/dancer/:/app/uploads/dancer/
       - ./uploads/school/:/app/uploads/school/
